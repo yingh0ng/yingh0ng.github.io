@@ -496,17 +496,14 @@
 
       
         
-          
-            <h3 id="单个表的联表"><a href="#单个表的联表" class="headerlink" title="单个表的联表"></a>单个表的联表</h3><p>当用join关联另外一个表的时候，mysql默认选择以小表作为驱动表。而left join强制用左表作为<br>驱动表，right join则强制用右表作为驱动表。</p>
-<p>建表语句：<br>CREATE TABLE <code>student</code> (<br>  <code>id</code> bigint(3) NOT NULL AUTO_INCREMENT,<br>  <code>name</code> varchar(15) NOT NULL,<br>  <code>class_id</code> bigint(3) NOT NULL,<br>  PRIMARY KEY (<code>id</code>),<br>  KEY <code>idx_class_id</code> (<code>class_id</code>)<br>);</p>
-<p>CREATE TABLE <code>class</code> (<br>  <code>id</code> bigint(3) NOT NULL AUTO_INCREMENT,<br>  <code>name</code> varchar(15) NOT NULL,<br>  PRIMARY KEY (<code>id</code>)<br>);</p>
-<p>EXPLAIN SELECT <em> FROM student s JOIN class c ON c.id=s.class_id;<br>EXPLAIN SELECT </em> FROM student s LEFT JOIN class c ON c.id=s.class_id;</p>
-<p>结果1<br>| id  | select_type | table | type | possible_keys | key          | key_len | ref        | rows | filtered |<br>| — | ———– | —– | —- | ————- | ———— | ——- | ———- | —- | ——– |<br>| 1   | SIMPLE      | c     | ALL  | PRIMARY       | ———— | ——- | ———- | 29   | 100      |<br>| 1   | SIMPLE      | s     | ref  | idx_class_id- | idx_class_id | 8       | test2.c.id | 1    | 100      |</p>
-<p>结果2<br>| id  | select_type | table | type   | possible_keys | key     | key_len | ref              | rows | filtered |<br>| — | ———– | —– | —— | ————- | ——- | ——- | —————- | —- | ——– |<br>| 1   | SIMPLE      | s     | ALL    | PRIMARY       | —     | ——- | —————- | 55   | 100      |<br>| 1   | SIMPLE      | c     | eq_ref | PRIMARY       | PRIMARY | 8       | test2.s.class_id | 1    | 100      |</p>
-<p>注意：当表的数据太少或者索引列存在大量相等值时，mysql不走索引。<br>准确的说，当扫描索引列等于某值的开销加上扫描索引树的开销大于扫描全表的开销时，mysql会不<br>走索引</p>
-<h3 id="多个表的联表"><a href="#多个表的联表" class="headerlink" title="多个表的联表"></a>多个表的联表</h3><p>用驱动表关联第一个表的结果集去关联第二个表，以此类推。</p>
-
-          
+          <h3 id="单个表的联表"><a href="#单个表的联表" class="headerlink" title="单个表的联表"></a>单个表的联表</h3><p>当用join关联另外一个表的时候，mysql默认选择以小表作为驱动表。而left join强制用左表作为<br>驱动表，right join则强制用右表作为驱动表。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/15/mysql联表执行过程/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -645,7 +642,7 @@
 
       
         
-          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#120;&#120;&#64;&#120;&#x78;&#120;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#120;&#120;&#120;&#64;&#120;&#x78;&#120;&#x2e;&#99;&#x6f;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
+          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#120;&#x78;&#64;&#x78;&#x78;&#120;&#x2e;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#120;&#120;&#x78;&#64;&#x78;&#x78;&#120;&#x2e;&#x63;&#111;&#x6d;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/11/problem-hexo/#more" rel="contents">
