@@ -253,6 +253,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/记一个使用PageHelper做分页时的特殊情况/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JOY ZHANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JOY ZHANG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/17/记一个使用PageHelper做分页时的特殊情况/" itemprop="url">记一个使用PageHelper做分页时的特殊情况</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T11:22:02+08:00">
+                2018-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用PageHelper4.1.6做分页的时候，有两点需注意。</p>
+<p>1.当”select count(0)”的total小于size的时候，PageHelper不做分页（无论page传的是多少，<br>最后组装的sql后面limit部分的offset都是0）。</p>
+<p>2.当传的offset&gt;(total-1)时，最后PageHelper都会把offset改为total-size-1。即当传的page<br>大于最后一页时，永远的都是返回最后一页的数据。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/maven打包生成的MANIFEST-MF文件问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -637,7 +781,7 @@
 
       
         
-          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#x78;&#120;&#120;&#64;&#120;&#120;&#x78;&#x2e;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#x78;&#120;&#120;&#64;&#120;&#120;&#x78;&#x2e;&#x63;&#111;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
+          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#x78;&#x78;&#64;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#109;" target="_blank" rel="noopener">&#120;&#x78;&#x78;&#64;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/11/problem-hexo/#more" rel="contents">
