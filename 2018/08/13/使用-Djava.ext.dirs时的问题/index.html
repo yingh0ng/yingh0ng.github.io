@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="java">
+<meta name="description" content="用cmd运行java程序时报了一个“javax.net.ssl.SSLException: java.lang.RuntimeException: Could not generate DH keypair”。根据百度上几个说法，包括加jar包，换jdk之类的都不行。发现生成那个keypair会用到\jre\lib\ext里面的jar包，而我的cmd中的命令有 -Djava.ext.dirs这个参">
 <meta name="keywords" content="java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JOY ZHANG">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用-Djava.ext.dirs时的问题">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/使用-Djava.ext.dirs时的问题/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="java">
+<meta property="og:description" content="用cmd运行java程序时报了一个“javax.net.ssl.SSLException: java.lang.RuntimeException: Could not generate DH keypair”。根据百度上几个说法，包括加jar包，换jdk之类的都不行。发现生成那个keypair会用到\jre\lib\ext里面的jar包，而我的cmd中的命令有 -Djava.ext.dirs这个参">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-08-13T03:36:06.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JOY ZHANG">
-<meta name="twitter:description" content="java">
+<meta name="twitter:title" content="使用-Djava.ext.dirs时的问题">
+<meta name="twitter:description" content="用cmd运行java程序时报了一个“javax.net.ssl.SSLException: java.lang.RuntimeException: Could not generate DH keypair”。根据百度上几个说法，包括加jar包，换jdk之类的都不行。发现生成那个keypair会用到\jre\lib\ext里面的jar包，而我的cmd中的命令有 -Djava.ext.dirs这个参">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/使用-Djava.ext.dirs时的问题/"/>
 
 
 
 
 
-  <title>Archive | JOY ZHANG</title>
+  <title>使用-Djava.ext.dirs时的问题 | JOY ZHANG</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,259 +239,163 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/使用-Djava.ext.dirs时的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JOY ZHANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JOY ZHANG">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">使用-Djava.ext.dirs时的问题</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T11:20:31+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 6 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/13/使用-Djava.ext.dirs时的问题/" itemprop="url">
-              
-                <span itemprop="name">使用-Djava.ext.dirs时的问题</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-13T11:20:31+08:00"
-              content="2018-08-13" >
-          08-13
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/13/windows下搭建azkaban/" itemprop="url">
-              
-                <span itemprop="name">windows下搭建azkaban</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-13T10:49:27+08:00"
-              content="2018-08-13" >
-          08-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/17/记一个使用PageHelper做分页时的特殊情况/" itemprop="url">
-              
-                <span itemprop="name">记一个使用PageHelper做分页时的特殊情况</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-17T11:22:02+08:00"
-              content="2018-07-17" >
-          07-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>用cmd运行java程序时报了一个“javax.net.ssl.SSLException: java.lang.RuntimeException: Could not generate DH keypair”。<br>根据百度上几个说法，包括加jar包，换jdk之类的都不行。发现生成那个keypair会用到\jre\lib\ext里面的jar包，而我的cmd中的命令<br>有 -Djava.ext.dirs这个参数。原来这个参数会把系统原来的$JAVA_HOME\jre\lib\ext覆盖掉，故在我的”-Djava.ext.dirs=”后面加上<br>$JAVA_HOME/jre/lib/ext(这个路径要写在其他路径前面？？)。问题到这就解决了。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/11/maven打包生成的MANIFEST-MF文件问题/" itemprop="url">
-              
-                <span itemprop="name">maven打包生成的MANIFEST.MF文件问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T17:04:16+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/mysql联表执行过程/" itemprop="url">
-              
-                <span itemprop="name">mysql联表执行过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T10:48:04+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/11/problem-hexo/" itemprop="url">
-              
-                <span itemprop="name">部署hexo过程中遇到的问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-11T00:00:00+08:00"
-              content="2018-06-11" >
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/13/windows下搭建azkaban/" rel="next" title="windows下搭建azkaban">
+                <i class="fa fa-chevron-left"></i> windows下搭建azkaban
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -498,6 +403,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -632,6 +541,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

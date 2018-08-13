@@ -253,6 +253,293 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/使用-Djava.ext.dirs时的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JOY ZHANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JOY ZHANG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/13/使用-Djava.ext.dirs时的问题/" itemprop="url">使用-Djava.ext.dirs时的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T11:20:31+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用cmd运行java程序时报了一个“javax.net.ssl.SSLException: java.lang.RuntimeException: Could not generate DH keypair”。<br>根据百度上几个说法，包括加jar包，换jdk之类的都不行。发现生成那个keypair会用到\jre\lib\ext里面的jar包，而我的cmd中的命令<br>有 -Djava.ext.dirs这个参数。原来这个参数会把系统原来的$JAVA_HOME\jre\lib\ext覆盖掉，故在我的”-Djava.ext.dirs=”后面加上<br>$JAVA_HOME/jre/lib/ext(这个路径要写在其他路径前面？？)。问题到这就解决了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/windows下搭建azkaban/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JOY ZHANG">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JOY ZHANG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/13/windows下搭建azkaban/" itemprop="url">windows下搭建azkaban</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-13T10:49:27+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gradlew build</span><br><span class="line"></span><br><span class="line">gradlew clean</span><br><span class="line"></span><br><span class="line">gradlew installDist</span><br><span class="line"></span><br><span class="line">gradlew test</span><br><span class="line"></span><br><span class="line">gradlew build -x test</span><br></pre></td></tr></table></figure>
+<p>2：azkaban分为单服务模式和多服务模式，我选择的是单服务模式，即solo-server。我的源码<br>路径是E:\azkaban-master，去E:\azkaban-master\azkaban-solo-server\build\distributions<br>下找到对应的zip包（windows下用zip，linux下用tar.gz)解压。</p>
+<p>3：运行cmd，进入上面解压的路径下，运行sh bin/start-solo.sh。看到日志报错了，说hadoop<br>找不到了。按照网上的教程安装了hadoop后再次运行，说java jdk找不到了。找到bin/internal下<br>的internal-start-solo-server.sh，发现CLASSPATH的路径用的是”:”来分隔。把”:”换成”;”后<br>（linux下用”:”,windows下用”;”），启动成功。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/记一个使用PageHelper做分页时的特殊情况/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -781,7 +1068,7 @@
 
       
         
-          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#x78;&#x78;&#64;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#109;" target="_blank" rel="noopener">&#120;&#x78;&#x78;&#64;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
+          <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#x78;&#x78;&#x78;&#64;&#120;&#120;&#120;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#x78;&#x78;&#x78;&#64;&#120;&#120;&#120;&#x2e;&#99;&#x6f;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/11/problem-hexo/#more" rel="contents">
