@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JOY ZHANG">
 <meta property="og:description" content="##1.SSR安装 a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/sha">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-20T10:05:39.858Z">
+<meta property="og:updated_time" content="2018-08-20T10:19:53.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vps搭建SSR+锐速">
 <meta name="twitter:description" content="##1.SSR安装 a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/sha">
@@ -349,7 +349,7 @@
 <p>停止：/etc/init.d/shadowsocks stop</p>
 <p>重启：/etc/init.d/shadowsocks restart</p>
 <p>状态：/etc/init.d/shadowsocks status</p>
-<p>卸载（仅限本教程西门吹雪脚本）：wget <a href="http://vpn.ximcx.cn/SSR/SSR" target="_blank" rel="noopener">http://vpn.ximcx.cn/SSR/SSR</a> &amp;&amp; bash SSR uninstall</p>
+<p>卸载（仅限本教程西门吹雪脚本）：wget <a href="http://vpn.ximcx.cn/SSR/SSR" target="_blank" rel="noopener">http://vpn.ximcx.cn/SSR/SSR</a> &amp;&amp; bash SSR uninstall<br><a id="more"></a></p>
 <p>c.SSR配置<br>vi /etc/shadowsocks.json</p>
 <p>{<br>    “server”: “0.0.0.0”,<br>    “server_ipv6”: “::”,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”: 1081,<br>    “port_password”:{<br>        “端口1”:”密码1”,<br>        “端口2”:”密码2”,<br>        “端口3”:”密码3”,<br>        “端口4”:”密码4”<br>    },<br>    “timeout”: 120,<br>    “udp_timeout”: 60,<br>    “method”: “chacha20”,<br>    “protocol”: “auth_sha1_compatible”,<br>    “protocol_param”: “”,<br>    “obfs”: “http_simple_compatible”,<br>    “obfs_param”: “”,<br>    “dns_ipv6”: false,<br>    “connect_verbose_info”: 0,<br>    “redirect”: “”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
 <p>##2.更换内核</p>
