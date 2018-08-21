@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="##1.SSR安装 a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/sha">
+<meta name="description" content="1.SSR安装a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/shadow">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vps搭建SSR+锐速">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/vps搭建SSR+锐速/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="##1.SSR安装 a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/sha">
+<meta property="og:description" content="1.SSR安装a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/shadow">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-20T10:19:53.158Z">
+<meta property="og:updated_time" content="2018-08-21T03:22:07.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vps搭建SSR+锐速">
-<meta name="twitter:description" content="##1.SSR安装 a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/sha">
+<meta name="twitter:description" content="1.SSR安装a.安装脚本 1$ wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/etc/init.d/shadow">
 
 
 
@@ -342,8 +342,7 @@
       
 
       
-        <p>##1.SSR安装</p>
-<p>a.安装脚本</p>
+        <h2 id="1-SSR安装"><a href="#1-SSR安装" class="headerlink" title="1.SSR安装"></a>1.SSR安装</h2><p>a.安装脚本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://vpn.ximcx.cn/SSR/SSR &amp;&amp; bash SSR</span><br></pre></td></tr></table></figure>
 <p>b.SSR使用命令<br>启动：/etc/init.d/shadowsocks start</p>
 <p>停止：/etc/init.d/shadowsocks stop</p>
@@ -352,8 +351,10 @@
 <p>卸载（仅限本教程西门吹雪脚本）：wget <a href="http://vpn.ximcx.cn/SSR/SSR" target="_blank" rel="noopener">http://vpn.ximcx.cn/SSR/SSR</a> &amp;&amp; bash SSR uninstall<br><a id="more"></a></p>
 <p>c.SSR配置<br>vi /etc/shadowsocks.json</p>
 <p>{<br>    “server”: “0.0.0.0”,<br>    “server_ipv6”: “::”,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”: 1081,<br>    “port_password”:{<br>        “端口1”:”密码1”,<br>        “端口2”:”密码2”,<br>        “端口3”:”密码3”,<br>        “端口4”:”密码4”<br>    },<br>    “timeout”: 120,<br>    “udp_timeout”: 60,<br>    “method”: “chacha20”,<br>    “protocol”: “auth_sha1_compatible”,<br>    “protocol_param”: “”,<br>    “obfs”: “http_simple_compatible”,<br>    “obfs_param”: “”,<br>    “dns_ipv6”: false,<br>    “connect_verbose_info”: 0,<br>    “redirect”: “”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
-<p>##2.更换内核</p>
-<p>##3.安装锐速</p>
+<h2 id="2-更换内核"><a href="#2-更换内核" class="headerlink" title="2.更换内核"></a>2.更换内核</h2><p>CentOS 7支持安装锐速的内核：3.10.0-229.1.2.el7.x86_64</p>
+<p>a.下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-3.10.0-229.1.2.el7.x86_64.rpm --force</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep kernel <span class="comment">#查看是否下载成功</span></span><br><span class="line"></span><br><span class="line">$ reboot <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">$ uname -r <span class="comment">#查看是否安装成功</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-安装锐速"><a href="#3-安装锐速" class="headerlink" title="3.安装锐速"></a>3.安装锐速</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span><br></pre></td></tr></table></figure>
 
       
     </div>
