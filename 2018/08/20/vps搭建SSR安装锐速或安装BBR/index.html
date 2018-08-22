@@ -82,14 +82,14 @@
 <meta name="description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vps搭建SSR+锐速">
-<meta property="og:url" content="http://yoursite.com/2018/08/20/vps搭建SSR+锐速/index.html">
+<meta property="og:title" content="vps搭建SSR安装锐速或安装BBR">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/vps搭建SSR安装锐速或安装BBR/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
 <meta property="og:description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-22T06:49:09.893Z">
+<meta property="og:updated_time" content="2018-08-22T06:59:27.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vps搭建SSR+锐速">
+<meta name="twitter:title" content="vps搭建SSR安装锐速或安装BBR">
 <meta name="twitter:description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/20/vps搭建SSR+锐速/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/20/vps搭建SSR安装锐速或安装BBR/"/>
 
 
 
 
 
-  <title>vps搭建SSR+锐速 | JOY ZHANG</title>
+  <title>vps搭建SSR安装锐速或安装BBR | JOY ZHANG</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/vps搭建SSR+锐速/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/vps搭建SSR安装锐速或安装BBR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JOY ZHANG">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vps搭建SSR+锐速</h1>
+          <h1 class="post-title" itemprop="name headline">vps搭建SSR安装锐速或安装BBR</h1>
         
 
         <div class="post-meta">
@@ -351,11 +351,11 @@
 <p>卸载（仅限本教程西门吹雪脚本）：wget <a href="http://vpn.ximcx.cn/SSR/SSR" target="_blank" rel="noopener">http://vpn.ximcx.cn/SSR/SSR</a> &amp;&amp; bash SSR uninstall<br><a id="more"></a></p>
 <p>c.SSR配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># vi /etc/shadowsocks.json</span></span><br></pre></td></tr></table></figure></p>
 <p>{<br>    “server”: “0.0.0.0”,<br>    “server_ipv6”: “::”,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”: 1081,<br>    “port_password”:{<br>        “端口1”:”密码1”,<br>        “端口2”:”密码2”,<br>        “端口3”:”密码3”,<br>        “端口4”:”密码4”<br>    },<br>    “timeout”: 120,<br>    “udp_timeout”: 60,<br>    “method”: “chacha20”,<br>    “protocol”: “auth_sha1_compatible”,<br>    “protocol_param”: “”,<br>    “obfs”: “http_simple_compatible”,<br>    “obfs_param”: “”,<br>    “dns_ipv6”: false,<br>    “connect_verbose_info”: 0,<br>    “redirect”: “”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
-<h2 id="2-更换内核"><a href="#2-更换内核" class="headerlink" title="2.更换内核"></a>2.更换内核</h2><p>CentOS 7支持安装锐速的内核：3.10.0-229.1.2.el7.x86_64</p>
+<h2 id="2-安装锐速"><a href="#2-安装锐速" class="headerlink" title="2.安装锐速"></a>2.安装锐速</h2><p>CentOS 7支持安装锐速的内核：3.10.0-229.1.2.el7.x86_64</p>
 <p>a.下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-3.10.0-229.1.2.el7.x86_64.rpm --force</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm -qa | grep kernel</span></span><br><span class="line"><span class="comment">#查看是否下载成功</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># reboot</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># uname -r</span></span><br><span class="line"><span class="comment">#查看是否安装成功</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-安装锐速"><a href="#3-安装锐速" class="headerlink" title="3.安装锐速"></a>3.安装锐速</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-安装BBR"><a href="#4-安装BBR" class="headerlink" title="4.安装BBR"></a>4.安装BBR</h2><p>bbr算法需要linux升级到4.9及以上的内核才能支持。</p>
+<p>b.安装锐速<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-安装BBR"><a href="#3-安装BBR" class="headerlink" title="3.安装BBR"></a>3.安装BBR</h2><p>bbr算法需要linux升级到4.9及以上的内核才能支持。</p>
 <p>a.安装eprl的源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span></span><br></pre></td></tr></table></figure></p>
 <p>b.安装最新的内核版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># yum --enablerepo=elrepo-kernel install kernel-ml -y</span></span><br></pre></td></tr></table></figure></p>
 <p>c.修改 grub2 的启动项，设置启动之后选择最新的内核。以防万一，选择第一个为默认启动项。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \'</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># grub2-set-default 0</span></span><br></pre></td></tr></table></figure></p>
