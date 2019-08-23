@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在使用PageHelper4.1.6做分页的时候，有两点需注意。 1.当”select count(0)”的total小于size的时候，PageHelper不做分页（无论page传的是多少，最后组装的sql后面limit部分的offset都是0）。 2.当传的offset&amp;gt;(total-1)时，最后PageHelper都会把offset改为total-size-1。即当传的page大于最后">
+<meta name="description" content="前言在生产上发现对A表进行select count()查询时非常慢，而数据量是A表几百倍的B表进行select count()时查询时间竟然跟A表非常接近。。。。。。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记一个使用PageHelper做分页时的特殊情况">
-<meta property="og:url" content="http://yoursite.com/2018/07/17/记一个使用PageHelper做分页时的特殊情况/index.html">
+<meta property="og:title" content="影响MySQL的COUNT语句性能的要素">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/影响MySQL的COUNT语句性能的要素/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="在使用PageHelper4.1.6做分页的时候，有两点需注意。 1.当”select count(0)”的total小于size的时候，PageHelper不做分页（无论page传的是多少，最后组装的sql后面limit部分的offset都是0）。 2.当传的offset&amp;gt;(total-1)时，最后PageHelper都会把offset改为total-size-1。即当传的page大于最后">
+<meta property="og:description" content="前言在生产上发现对A表进行select count()查询时非常慢，而数据量是A表几百倍的B表进行select count()时查询时间竟然跟A表非常接近。。。。。。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-07-17T03:45:16.448Z">
+<meta property="og:updated_time" content="2019-08-23T09:16:55.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记一个使用PageHelper做分页时的特殊情况">
-<meta name="twitter:description" content="在使用PageHelper4.1.6做分页的时候，有两点需注意。 1.当”select count(0)”的total小于size的时候，PageHelper不做分页（无论page传的是多少，最后组装的sql后面limit部分的offset都是0）。 2.当传的offset&amp;gt;(total-1)时，最后PageHelper都会把offset改为total-size-1。即当传的page大于最后">
+<meta name="twitter:title" content="影响MySQL的COUNT语句性能的要素">
+<meta name="twitter:description" content="前言在生产上发现对A表进行select count()查询时非常慢，而数据量是A表几百倍的B表进行select count()时查询时间竟然跟A表非常接近。。。。。。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/17/记一个使用PageHelper做分页时的特殊情况/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/23/影响MySQL的COUNT语句性能的要素/"/>
 
 
 
 
 
-  <title>记一个使用PageHelper做分页时的特殊情况 | JOY ZHANG</title>
+  <title>影响MySQL的COUNT语句性能的要素 | JOY ZHANG</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/记一个使用PageHelper做分页时的特殊情况/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/影响MySQL的COUNT语句性能的要素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JOY ZHANG">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记一个使用PageHelper做分页时的特殊情况</h1>
+          <h1 class="post-title" itemprop="name headline">影响MySQL的COUNT语句性能的要素</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T11:22:02+08:00">
-                2018-07-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T10:37:11+08:00">
+                2019-08-23
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -342,9 +342,9 @@
       
 
       
-        <p>在使用PageHelper4.1.6做分页的时候，有两点需注意。</p>
-<p>1.当”select count(0)”的total小于size的时候，PageHelper不做分页（无论page传的是多少，<br>最后组装的sql后面limit部分的offset都是0）。</p>
-<p>2.当传的offset&gt;(total-1)时，最后PageHelper都会把offset改为total-size-1。即当传的page<br>大于最后一页时，永远的都是返回最后一页的数据。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在生产上发现对A表进行select count(<em>)查询时非常慢，而数据量是A表几百倍的B表进行select count(</em>)时查询时间竟然跟A表非常接近。。。。。。</p>
+<a id="more"></a>
+<h2 id="key-len"><a href="#key-len" class="headerlink" title="key_len"></a>key_len</h2><p> 很多人会问，select count(1)跟select count(*)哪个快，答案是—一样快。两者都是用到了表里的最优索引，那什么是最优索引呢。通过EXPLAIN后，输出的指标有个叫key_len的，意思是索引的字节数。通过测试，上述两种方式都用到了表里key_len最小的索引（UTF-8一个字符占3个字节）。<br> 回到前面所说的查询慢的问题，发现就是前面的表中只有一个索引，key_len是98.而后者最小的key_len是5，所以这就造成两者的查询效率差异大。</p>
 
       
     </div>
@@ -369,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/11/maven打包生成的MANIFEST-MF文件问题/" rel="next" title="maven打包生成的MANIFEST.MF文件问题">
-                <i class="fa fa-chevron-left"></i> maven打包生成的MANIFEST.MF文件问题
+              <a href="/2018/08/20/vps搭建SSR安装锐速或安装BBR/" rel="next" title="vps搭建SSR安装锐速或安装BBR">
+                <i class="fa fa-chevron-left"></i> vps搭建SSR安装锐速或安装BBR
               </a>
             
           </div>
@@ -378,10 +378,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/13/windows下搭建azkaban/" rel="prev" title="windows下搭建azkaban">
-                windows下搭建azkaban <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
