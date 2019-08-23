@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#120;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
+<meta name="description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#x78;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#120;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署hexo过程中遇到的问题">
 <meta property="og:url" content="http://yoursite.com/2018/06/11/problem-hexo/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#120;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
+<meta property="og:description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#x78;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#120;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2018-06-13T03:22:41.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署hexo过程中遇到的问题">
-<meta name="twitter:description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#120;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
+<meta name="twitter:description" content="1.GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误：gpg: skipped “xxx &amp;#120;&amp;#x78;&amp;#x78;&amp;#64;&amp;#x78;&amp;#x78;&amp;#120;&amp;#x2e;&amp;#99;&amp;#111;&amp;#109;“: secret key not availablegpg: signing failed: secret key not avai">
 
 
 
@@ -342,10 +342,10 @@
       
 
       
-        <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#120;&#x78;&#64;&#x78;&#x78;&#x78;&#46;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#120;&#120;&#x78;&#64;&#x78;&#x78;&#x78;&#46;&#x63;&#111;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br><a id="more"></a></p>
+        <h2 id="1-GPG加密失败"><a href="#1-GPG加密失败" class="headerlink" title="1.GPG加密失败"></a>1.GPG加密失败</h2><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：<br>gpg: skipped “xxx <a href="mailto:&#120;&#x78;&#x78;&#64;&#x78;&#x78;&#120;&#x2e;&#99;&#111;&#109;" target="_blank" rel="noopener">&#120;&#x78;&#x78;&#64;&#x78;&#x78;&#120;&#x2e;&#99;&#111;&#109;</a>“: secret key not available<br>gpg: signing failed: secret key not available<br>error: gpg failed to sign the data<br>fatal: failed to write commit object<br><a id="more"></a></p>
 <p>进入目录C:\Users\Administrator.gnupg后发现pubring.gpg和secring.gpg这两个文件大小<br>均为0kb。可能是我之前配置过gpg加密，然后现在过期了。</p>
 <p>使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --gen-key</span><br></pre></td></tr></table></figure></p>
-<p>然后会依次让你选择key类型、key文件大小、有效时间，最后填写名称、邮件地址和备注（这三个<br>信息跟github账号无关）。最后输出的信息即为你的gpg密钥，如：<br>pub   2048G/FB7D735A 2018-06-11 [expires: 2020-06-10]<br>      Key fingerprint = 401B EC71 97B4 AEE4 089E  C017 7AE8 6157 FB7D 736A<br>uid                  XXX (XX) <a href="mailto:&#88;&#88;&#88;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#88;&#88;&#88;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a><br>sub   2048G/A6CA85D3 2018-06-11 [expires: 2020-06-10]</p>
+<p>然后会依次让你选择key类型、key文件大小、有效时间，最后填写名称、邮件地址和备注（这三个<br>信息跟github账号无关）。最后输出的信息即为你的gpg密钥，如：<br>pub   2048G/FB7D735A 2018-06-11 [expires: 2020-06-10]<br>      Key fingerprint = 401B EC71 97B4 AEE4 089E  C017 7AE8 6157 FB7D 736A<br>uid                  XXX (XX) <a href="mailto:&#x58;&#x58;&#x58;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;" target="_blank" rel="noopener">&#x58;&#x58;&#x58;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>sub   2048G/A6CA85D3 2018-06-11 [expires: 2020-06-10]</p>
 <p>其中pub为公钥，FB7D735A为公钥key，sub为私钥，A6CA85D3为私钥key。</p>
 <p>使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --armor --<span class="built_in">export</span> yourkey</span><br></pre></td></tr></table></figure></p>
 <p>“yourkey”为公钥key或者私钥key。打开github-&gt;settings-&gt;SSH and GPG KEYS，添加GPG KEY。<br>把刚才命令输出的信息复制粘贴到这儿。</p>
