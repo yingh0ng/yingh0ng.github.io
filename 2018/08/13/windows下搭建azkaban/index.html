@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包: 123456789gradlew buildgradlew cleangradlew installDistgradlew testgradlew build -x test 2：azkaban分为单服务模式和多服务模式，我选择的是单服务模式，即solo-server。我的源码路径是E:\az">
+<meta name="description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows下搭建azkaban">
 <meta property="og:url" content="http://yoursite.com/2018/08/13/windows下搭建azkaban/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包: 123456789gradlew buildgradlew cleangradlew installDistgradlew testgradlew build -x test 2：azkaban分为单服务模式和多服务模式，我选择的是单服务模式，即solo-server。我的源码路径是E:\az">
+<meta property="og:description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-13T03:15:41.340Z">
+<meta property="og:updated_time" content="2019-11-22T09:53:13.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下搭建azkaban">
-<meta name="twitter:description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包: 123456789gradlew buildgradlew cleangradlew installDistgradlew testgradlew build -x test 2：azkaban分为单服务模式和多服务模式，我选择的是单服务模式，即solo-server。我的源码路径是E:\az">
+<meta name="twitter:description" content="1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:">
 
 
 
@@ -342,7 +342,7 @@
       
 
       
-        <p>1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:</p>
+        <p>1:去github把azkaban的源码下到本地，用IDE打开。根据官方文档，执行一下四条命令进行打包:<br><a id="more"></a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gradlew build</span><br><span class="line"></span><br><span class="line">gradlew clean</span><br><span class="line"></span><br><span class="line">gradlew installDist</span><br><span class="line"></span><br><span class="line">gradlew test</span><br><span class="line"></span><br><span class="line">gradlew build -x test</span><br></pre></td></tr></table></figure>
 <p>2：azkaban分为单服务模式和多服务模式，我选择的是单服务模式，即solo-server。我的源码<br>路径是E:\azkaban-master，去E:\azkaban-master\azkaban-solo-server\build\distributions<br>下找到对应的zip包（windows下用zip，linux下用tar.gz)解压。</p>
 <p>3：运行cmd，进入上面解压的路径下，运行sh bin/start-solo.sh。看到日志报错了，说hadoop<br>找不到了。按照网上的教程安装了hadoop后再次运行，说java jdk找不到了。找到bin/internal下<br>的internal-start-solo-server.sh，发现CLASSPATH的路径用的是”:”来分隔。把”:”换成”;”后<br>（linux下用”:”,windows下用”;”），启动成功。</p>

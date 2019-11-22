@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
+<meta name="description" content="1.shadowsocks安装使用a.安装12yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vps搭建SSR安装锐速或安装BBR">
+<meta property="og:title" content="CentOS搭建Shadowsocks以及开启BBR算法">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/vps搭建SSR安装锐速或安装BBR/index.html">
 <meta property="og:site_name" content="JOY ZHANG">
-<meta property="og:description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
+<meta property="og:description" content="1.shadowsocks安装使用a.安装12yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-22T07:44:30.386Z">
+<meta property="og:updated_time" content="2019-11-22T09:53:35.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vps搭建SSR安装锐速或安装BBR">
-<meta name="twitter:description" content="1.SSR安装a.安装脚本 1[root@server ~]# wget http://vpn.ximcx.cn/SSR/SSR &amp;amp;&amp;amp; bash SSR b.SSR使用命令启动：/etc/init.d/shadowsocks start 停止：/etc/init.d/shadowsocks stop 重启：/etc/init.d/shadowsocks restart 状态：/et">
+<meta name="twitter:title" content="CentOS搭建Shadowsocks以及开启BBR算法">
+<meta name="twitter:description" content="1.shadowsocks安装使用a.安装12yum install python-setuptools &amp;amp;&amp;amp; easy_install pippip install shadowsocks">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>vps搭建SSR安装锐速或安装BBR | JOY ZHANG</title>
+  <title>CentOS搭建Shadowsocks以及开启BBR算法 | JOY ZHANG</title>
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vps搭建SSR安装锐速或安装BBR</h1>
+          <h1 class="post-title" itemprop="name headline">CentOS搭建Shadowsocks以及开启BBR算法</h1>
         
 
         <div class="post-meta">
@@ -342,20 +342,13 @@
       
 
       
-        <h2 id="1-SSR安装"><a href="#1-SSR安装" class="headerlink" title="1.SSR安装"></a>1.SSR安装</h2><p>a.安装脚本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># wget http://vpn.ximcx.cn/SSR/SSR &amp;&amp; bash SSR</span></span><br></pre></td></tr></table></figure>
-<p>b.SSR使用命令<br>启动：/etc/init.d/shadowsocks start</p>
-<p>停止：/etc/init.d/shadowsocks stop</p>
-<p>重启：/etc/init.d/shadowsocks restart</p>
-<p>状态：/etc/init.d/shadowsocks status</p>
-<p>卸载（仅限本教程西门吹雪脚本）：wget <a href="http://vpn.ximcx.cn/SSR/SSR" target="_blank" rel="noopener">http://vpn.ximcx.cn/SSR/SSR</a> &amp;&amp; bash SSR uninstall<br><a id="more"></a></p>
-<p>c.SSR配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># vi /etc/shadowsocks.json</span></span><br></pre></td></tr></table></figure></p>
-<p>{<br>    “server”: “0.0.0.0”,<br>    “server_ipv6”: “::”,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”: 1081,<br>    “port_password”:{<br>        “端口1”:”密码1”,<br>        “端口2”:”密码2”,<br>        “端口3”:”密码3”,<br>        “端口4”:”密码4”<br>    },<br>    “timeout”: 120,<br>    “udp_timeout”: 60,<br>    “method”: “chacha20”,<br>    “protocol”: “auth_sha1_compatible”,<br>    “protocol_param”: “”,<br>    “obfs”: “http_simple_compatible”,<br>    “obfs_param”: “”,<br>    “dns_ipv6”: false,<br>    “connect_verbose_info”: 0,<br>    “redirect”: “”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
-<h2 id="2-安装锐速"><a href="#2-安装锐速" class="headerlink" title="2.安装锐速"></a>2.安装锐速</h2><p>CentOS 7支持安装锐速的内核：3.10.0-229.1.2.el7.x86_64</p>
-<p>a.下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-3.10.0-229.1.2.el7.x86_64.rpm --force</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm -qa | grep kernel</span></span><br><span class="line"><span class="comment">#查看是否下载成功</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># reboot</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># uname -r</span></span><br><span class="line"><span class="comment">#查看是否安装成功</span></span><br></pre></td></tr></table></figure>
-<p>b.安装锐速<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="3-安装BBR"><a href="#3-安装BBR" class="headerlink" title="3.安装BBR"></a>3.安装BBR</h2><p>bbr算法需要linux升级到4.9及以上的内核才能支持。</p>
+        <h2 id="1-shadowsocks安装使用"><a href="#1-shadowsocks安装使用" class="headerlink" title="1.shadowsocks安装使用"></a>1.shadowsocks安装使用</h2><p>a.安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>b.使用<br>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -p 443 -k password -m aes-256-cfb</span><br></pre></td></tr></table></figure></p>
+<p>后台运行、停止：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ssserver -p 443 -k password -m aes-256-cfb --user nobody -d start</span><br><span class="line">sudo ssserver -d stop</span><br></pre></td></tr></table></figure></p>
+<p>使用配置文件启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装BBR"><a href="#2-安装BBR" class="headerlink" title="2.安装BBR"></a>2.安装BBR</h2><p>bbr算法需要linux升级到4.9及以上的内核才能支持。</p>
 <p>a.安装eprl的源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span></span><br></pre></td></tr></table></figure></p>
 <p>b.安装最新的内核版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># yum --enablerepo=elrepo-kernel install kernel-ml -y</span></span><br></pre></td></tr></table></figure></p>
 <p>c.修改 grub2 的启动项，设置启动之后选择最新的内核。以防万一，选择第一个为默认启动项。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \'</span></span><br><span class="line"></span><br><span class="line">[root@server ~]<span class="comment"># grub2-set-default 0</span></span><br></pre></td></tr></table></figure></p>
