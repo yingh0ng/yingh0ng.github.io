@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -94,17 +94,19 @@
 
 
 
-<meta name="description" content="GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误： 1234gpg: skipped “xxx xxx@xxx.com“: secret key not availablegpg: signing failed: secret key not availableerror: gpg failed to sign the datafatal: fail">
+<meta name="description" content="​        容器是Java最重要的类库。它不仅被程序员们大量地使用，而且非常高效的帮助我们完成工作。在使用这些容器之前，我们必须清楚的了解所有的容器类，以及它们背后的实现原理。只有这样，我们才能在不同的程序中正确地选择合适的容器。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部署hexo过程中遇到的问题">
-<meta property="og:url" content="http://yoursite.com/2018/06/11/%E9%83%A8%E7%BD%B2hexo%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="Java容器简单总结">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/Java%E5%AE%B9%E5%99%A8%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="写代码要认真">
-<meta property="og:description" content="GPG加密失败在github上配置好ssh key后使用命令hexo deploy后出现一下错误： 1234gpg: skipped “xxx xxx@xxx.com“: secret key not availablegpg: signing failed: secret key not availableerror: gpg failed to sign the datafatal: fail">
-<meta property="article:published_time" content="2018-06-11T04:29:45.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:54:16.110Z">
+<meta property="og:description" content="​        容器是Java最重要的类库。它不仅被程序员们大量地使用，而且非常高效的帮助我们完成工作。在使用这些容器之前，我们必须清楚的了解所有的容器类，以及它们背后的实现原理。只有这样，我们才能在不同的程序中正确地选择合适的容器。">
+<meta property="og:image" content="http://yoursite.com/images/java-collections.png">
+<meta property="article:published_time" content="2020-05-12T02:36:40.000Z">
+<meta property="article:modified_time" content="2020-06-06T16:02:47.865Z">
 <meta property="article:author" content="ZHANG YINGHONG">
-<meta property="article:tag" content="工具">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/java-collections.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/11/部署hexo过程中遇到的问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/12/Java容器简单总结/"/>
 
 
 
 
 
-  <title>部署hexo过程中遇到的问题 | 写代码要认真</title>
+  <title>Java容器简单总结 | 写代码要认真</title>
   
 
 
@@ -262,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/%E9%83%A8%E7%BD%B2hexo%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/Java%E5%AE%B9%E5%99%A8%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZHANG YINGHONG">
@@ -279,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">部署hexo过程中遇到的问题</h1>
+          <h1 class="post-title" itemprop="name headline">Java容器简单总结</h1>
         
 
         <div class="post-meta">
@@ -291,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T12:29:45+08:00">
-                2018-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T10:36:40+08:00">
+                2020-05-12
               </time>
             
 
@@ -329,32 +331,55 @@
       
 
       
-        <h3 id="GPG加密失败"><a href="#GPG加密失败" class="headerlink" title="GPG加密失败"></a>GPG加密失败</h3><p>在github上配置好ssh key后使用命令hexo deploy后出现一下错误：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gpg: skipped “xxx xxx@xxx.com“: secret key not available</span><br><span class="line">gpg: signing failed: secret key not available</span><br><span class="line">error: gpg failed to sign the data</span><br><span class="line">fatal: failed to write commit object</span><br></pre></td></tr></table></figure>
-
+        <p>​        容器是Java最重要的类库。它不仅被程序员们大量地使用，而且非常高效的帮助我们完成工作。在使用这些容器之前，我们必须清楚的了解所有的容器类，以及它们背后的实现原理。只有这样，我们才能在不同的程序中正确地选择合适的容器。</p>
 <a id="more"></a>
 
-<p>进入目录C:\Users\Administrator.gnupg后发现pubring.gpg和secring.gpg这两个文件大小<br>均为0kb。可能是我之前配置过gpg加密，然后现在过期了。</p>
-<p>使用命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --gen-key</span><br></pre></td></tr></table></figure>
-
-<p>然后会依次让你选择key类型、key文件大小、有效时间，最后填写名称、邮件地址和备注（这三个<br>信息跟github账号无关）。最后输出的信息即为你的gpg密钥，如：<br>pub 2048G/FB7D735A 2018-06-11 [expires: 2020-06-10]<br>Key fingerprint = 401B EC71 97B4 AEE4 089E C017 7AE8 6157 FB7D 736A<br>uid XXX (XX) <a href="mailto:XXX@gmail.com">XXX@gmail.com</a><br>sub 2048G/A6CA85D3 2018-06-11 [expires: 2020-06-10]</p>
-<p>其中pub为公钥，FB7D735A为公钥key，sub为私钥，A6CA85D3为私钥key。</p>
-<p>使用命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --armor --export yourkey</span><br></pre></td></tr></table></figure>
-
-<p>“yourkey”为公钥key或者私钥key。打开github-&gt;settings-&gt;SSH and GPG KEYS，添加GPG KEY。<br>把刚才命令输出的信息复制粘贴到这儿。</p>
-<p>然后输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global commit.gpgsign.true</span><br><span class="line">git config --global user.signingkey FB7D736A（你自己的key）</span><br></pre></td></tr></table></figure>
-
-<p>完成配置。</p>
-<p>输入命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --list-secret-keys</span><br></pre></td></tr></table></figure>
-
-<p>能看到你配置好的GPG key。</p>
-<p>最后重新部署：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo Generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h2 id="完整的容器分类法"><a href="#完整的容器分类法" class="headerlink" title="完整的容器分类法"></a>完整的容器分类法</h2><p><img src="/images/java-collections.png" alt=""></p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ol>
+<li><h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>​        ArrayList是最常用的List实现类，当你不知道选择哪种List的时候，ArrayList是你的首选项，除非你的程序存在大量的增加和删除操作。它内部使用一个数组来存储数据，所以它跟数组一样具有查找快的特点。也因为这样，数组容量固定的特点使它进行增加或删除操作时，可能会生成新的数组，然后将数据复制到新数组上。这对我们程序的性能影响非常大，所以当我们的程序存在大量增加或删除操作时，ArrayList不是我们要选择的容器。</p>
+<p>​        当使用无参构造器创建ArrayList时，内部数组elementData指向一个内部默认空数组对象，且第一次调用add方法时会将elementData的容量扩充为10。</p>
+</li>
+</ol>
+<ol start="2">
+<li><h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>​        LinkedList是基于双向链表的原理实现的，每个对象（静态内部类Node对象）都保存着前一个和后一个对象的引用（头和尾除外），所以它有着链表查询慢增删快的特点。</p>
+</li>
+</ol>
+<ol start="3">
+<li><h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>​        Vector是一个线程安全的List，实现原理跟ArrayList很相似，都有一个内部的数组对象。不同的是，Vector的读写方法都用了互斥锁（synchronize关键字）来保证它的多线程环境中的安全性。所以，Vector是一个线程安全的List，但性能相对ArrayList较差。</p>
+</li>
+</ol>
+<ol start="4">
+<li><h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><p>​        Stack是继承自Vector的类，实现原理也是数组，并且用了互斥锁，特点是先进后出。pop()方法会返回内部数组最后一个元素，push()方法会把元素直接添加到数组末尾。但正是它继承自Vector，导致Stack能根据索引删除和增加元素，这在一些使用场景中存在很大的安全漏洞。现在通常实现Queue接口去实现栈结构。</p>
+</li>
+</ol>
+<p>​        </p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><ol>
+<li><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>​        HashMap是最常用的键值对容器，实现原理是内部使用一个数组来存放值，决定值在数组中的位置是键的hash值。所以要使用自定义类作为HashMap的键时，一定要覆盖hashCode()方法和equals()方法，让你的值均匀地分布在HashMap内部数组上。</p>
+<p>​        即使我们覆盖了hashCode()方法，也避免不了存在相同hash值得情况。这时，HashMap会通过链表结构把新添加的元素添加到上一个元素的末尾。链表虽然增删快，但查找慢，所以当链表长度达到8的时候，HashMap会使用红黑树结构来代替链表。</p>
+</li>
+</ol>
+<ol start="2">
+<li><h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>​        TreeMap是用红黑树来存储数据的容器，性能相对HashMap略差，但能维持顺序。因为是红黑树，所以用作键的类必须实现Comparator接口。除非有排序的需要，否则一般使用HashMap。</p>
+</li>
+</ol>
+<ol start="3">
+<li><h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>​        LinedHashMap继承自HashMap，因此它也拥有非常好的查询性能。另外，它还维护了一个双向链表，用于按照插入顺序遍历键值对。此外，LInkedHashMap还提供了按照采用最近最少使用（LRU)算法，使没有被访问过的元素移动到链表的前面。</p>
+</li>
+</ol>
+<p>​        </p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><ol>
+<li><h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p>​        为快速查找而设计的Set。HashSet内部有一个HashMap对象，后者的key即是HashSet的元素，因此存入HashSet的元素必须覆盖hashCode()。</p>
+</li>
+</ol>
+<ol start="2">
+<li><h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>​        保持次序的Set，底层以树结构实现。内部维护一个TreeMap对象用于存储数据和实现元素的次序，因此元素必须实现Comparator接口。</p>
+</li>
+</ol>
+<ol start="3">
+<li><h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><p>​        具有HashSet的查询速度，且内部使用了链表来保存元素的插入顺序。使用迭代器遍历Set时，会以元素的插入循序返回元素，元素也必须覆盖hashCode()方法。</p>
+</li>
+</ol>
+<p>​        </p>
 
       
     </div>
@@ -372,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -385,14 +410,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/05/03/RTTI-Java%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/" rel="next" title="RTTI--Java类型信息">
+                <i class="fa fa-chevron-left"></i> RTTI--Java类型信息
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/15/MySQL%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/" rel="prev" title="MySQL联表查询的一个问题">
-                MySQL联表查询的一个问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/12/Spring-IOC%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="prev" title="Spring_IOC容器源码分析">
+                Spring_IOC容器源码分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GPG加密失败"><span class="nav-number">1.</span> <span class="nav-text">GPG加密失败</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的容器分类法"><span class="nav-number">1.</span> <span class="nav-text">完整的容器分类法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.0.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList"><span class="nav-number">2.0.2.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vector"><span class="nav-number">2.0.3.</span> <span class="nav-text">Vector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-number">2.0.4.</span> <span class="nav-text">Stack</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">3.</span> <span class="nav-text">Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap"><span class="nav-number">3.0.1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeMap"><span class="nav-number">3.0.2.</span> <span class="nav-text">TreeMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashMap"><span class="nav-number">3.0.3.</span> <span class="nav-text">LinkedHashMap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set"><span class="nav-number">4.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet"><span class="nav-number">4.0.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet"><span class="nav-number">4.0.2.</span> <span class="nav-text">TreeSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">4.0.3.</span> <span class="nav-text">LinkedHashSet</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

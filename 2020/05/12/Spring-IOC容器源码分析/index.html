@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Maven," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -94,17 +94,19 @@
 
 
 
-<meta name="description" content="平时运行项目的时候都在被idea或者在公司的测试环境用Jenkins自动构建，很少作用java命令直接运行。果然，抱着好奇的心理去试一下的时候就发现了一些问题。 1.首先使用idea新建一个maven的hello world项目，pom文件不做修改。注意：此时项目里没有MANIFEST.MF文件！ 2.直接在idea或者cmd打包&amp;运行 12mvn packagejava -jar xxx">
+<meta name="description" content="Spring IOC简介​        Spring IOC（控制反转）是Spring最核心的技术，它将创建对象这个过程交给容器来管理，我们的程序不需要关心对象是怎样创建的。开发人员可以通过xml文件或者注解的方式定义好所需要的Bean，在需要Bean的时候直接像容器获取就能使用。这将省去了大量的创建对象的时间，极大地提高开发人员的效率和代码的可维护性。 ApplicationContext​">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Maven打包并运行jar">
-<meta property="og:url" content="http://yoursite.com/2018/07/11/%E4%BD%BF%E7%94%A8Maven%E6%89%93%E5%8C%85%E5%B9%B6%E8%BF%90%E8%A1%8Cjar/index.html">
+<meta property="og:title" content="Spring_IOC容器源码分析">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/Spring-IOC%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="写代码要认真">
-<meta property="og:description" content="平时运行项目的时候都在被idea或者在公司的测试环境用Jenkins自动构建，很少作用java命令直接运行。果然，抱着好奇的心理去试一下的时候就发现了一些问题。 1.首先使用idea新建一个maven的hello world项目，pom文件不做修改。注意：此时项目里没有MANIFEST.MF文件！ 2.直接在idea或者cmd打包&amp;运行 12mvn packagejava -jar xxx">
-<meta property="article:published_time" content="2018-07-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:54:54.611Z">
+<meta property="og:description" content="Spring IOC简介​        Spring IOC（控制反转）是Spring最核心的技术，它将创建对象这个过程交给容器来管理，我们的程序不需要关心对象是怎样创建的。开发人员可以通过xml文件或者注解的方式定义好所需要的Bean，在需要Bean的时候直接像容器获取就能使用。这将省去了大量的创建对象的时间，极大地提高开发人员的效率和代码的可维护性。 ApplicationContext​">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Spring-IOC%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/%5Cimages%5Cspring-IOC.png">
+<meta property="article:published_time" content="2020-05-12T08:54:44.000Z">
+<meta property="article:modified_time" content="2020-06-06T16:08:42.146Z">
 <meta property="article:author" content="ZHANG YINGHONG">
-<meta property="article:tag" content="Maven">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/12/Spring-IOC%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/%5Cimages%5Cspring-IOC.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/11/使用Maven打包并运行jar/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/12/Spring-IOC容器源码分析/"/>
 
 
 
 
 
-  <title>使用Maven打包并运行jar | 写代码要认真</title>
+  <title>Spring_IOC容器源码分析 | 写代码要认真</title>
   
 
 
@@ -262,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/%E4%BD%BF%E7%94%A8Maven%E6%89%93%E5%8C%85%E5%B9%B6%E8%BF%90%E8%A1%8Cjar/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/Spring-IOC%E5%AE%B9%E5%99%A8%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZHANG YINGHONG">
@@ -279,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用Maven打包并运行jar</h1>
+          <h1 class="post-title" itemprop="name headline">Spring_IOC容器源码分析</h1>
         
 
         <div class="post-meta">
@@ -291,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:00:00+08:00">
-                2018-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T16:54:44+08:00">
+                2020-05-12
               </time>
             
 
@@ -329,22 +331,21 @@
       
 
       
-        <p>平时运行项目的时候都在被idea或者在公司的测试环境用Jenkins自动构建，很少作用java命令直接<br>运行。果然，抱着好奇的心理去试一下的时候就发现了一些问题。</p>
-<p>1.首先使用idea新建一个maven的hello world项目，pom文件不做修改。注意：此时项目里没有<br>MANIFEST.MF文件！</p>
-<p>2.直接在idea或者cmd打包&amp;运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br><span class="line">java -jar xxx.jar</span><br></pre></td></tr></table></figure>
+        <h2 id="Spring-IOC简介"><a href="#Spring-IOC简介" class="headerlink" title="Spring IOC简介"></a>Spring IOC简介</h2><p>​        Spring IOC（控制反转）是Spring最核心的技术，它将创建对象这个过程交给容器来管理，我们的程序不需要关心对象是怎样创建的。开发人员可以通过xml文件或者注解的方式定义好所需要的Bean，在需要Bean的时候直接像容器获取就能使用。这将省去了大量的创建对象的时间，极大地提高开发人员的效率和代码的可维护性。</p>
+<h3 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h3><p>​        应用上下文，也就是我们常常说的Spring容器，Spring通过它来管理Bean的生命周期，所以它是Spring实现IOC的载体。下面是一个最基本的启动Spring容器的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"classpath:application.xml"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>cmd告诉我“xxx.jar中没有主清单属性”，初步猜测是jvm找不到程序的入口类。网上查了下都是说<br>缺少MANIFEST.MF文件或者MANIFEST.MF文件里没有指定main-class。</p>
+<p>​        这是最经典的通过xml文件的方式配置Bean。除了ClassPathXmlApplicationContext，还要其他ApplicationContext的实现类，它们的继承结构如下：</p>
 <a id="more"></a>
 
-<p>4.根据以上问题，在java目录下新建一个META-INF目录，并在其下新建一个MANIFEST.MF文件。<br>指定main-class，重新打包运行。<br>但上面那个“没有主清单属性”的问题依然存在。打开jar包里的MANIFEST.MF文件发现是这样的。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Manifest-Version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">Archiver-Version:</span> <span class="string">Plexus</span> <span class="string">Archiver</span></span><br><span class="line"><span class="attr">Built-By:</span> <span class="string">Administrator</span></span><br><span class="line"><span class="attr">Created-By:</span> <span class="string">Apache</span> <span class="string">Maven</span> <span class="number">3.3</span><span class="number">.9</span></span><br><span class="line"><span class="attr">Build-Jdk:</span> <span class="number">1.8</span><span class="string">.0_111</span></span><br></pre></td></tr></table></figure>
-
-<p>里面并没有我定义的main-class属性，而且多了以上其他属性？？</p>
-<p>5.原来maven自带的jar包（具体哪个jar包有待探讨）会自动生成一个MANIFEST.MF文件，所以把<br>我自己建的MANIFEST.MF文件覆盖掉了。修改pom文件,引入一个plugin如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>testjar<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-jar-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">manifest</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">addClasspath</span>&gt;</span>true<span class="tag">&lt;/<span class="name">addClasspath</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">mainClass</span>&gt;</span>com.joy.Test1<span class="tag">&lt;/<span class="name">mainClass</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>重新打包运行，搞定。</p>
+<p><img src="%5Cimages%5Cspring-IOC.png" alt=""></p>
+<h3 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h3><h2 id="启动过程分析"><a href="#启动过程分析" class="headerlink" title="启动过程分析"></a>启动过程分析</h2><ol>
+<li><h3 id="创建Bean容器前的准备工作"><a href="#创建Bean容器前的准备工作" class="headerlink" title="创建Bean容器前的准备工作"></a>创建Bean容器前的准备工作</h3></li>
+<li><h3 id="创建Bean容器，加载并注册Bean"><a href="#创建Bean容器，加载并注册Bean" class="headerlink" title="创建Bean容器，加载并注册Bean"></a>创建Bean容器，加载并注册Bean</h3></li>
+<li><h3 id="Bean容器实例化完成后"><a href="#Bean容器实例化完成后" class="headerlink" title="Bean容器实例化完成后"></a>Bean容器实例化完成后</h3></li>
+<li><h3 id="准备Bean容器"><a href="#准备Bean容器" class="headerlink" title="准备Bean容器"></a>准备Bean容器</h3></li>
+<li><h3 id="初始化所有singleton-beans"><a href="#初始化所有singleton-beans" class="headerlink" title="初始化所有singleton beans"></a>初始化所有singleton beans</h3></li>
+</ol>
 
       
     </div>
@@ -362,7 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Maven/" rel="tag"># Maven</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -375,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/15/MySQL%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98/" rel="next" title="MySQL联表查询的一个问题">
-                <i class="fa fa-chevron-left"></i> MySQL联表查询的一个问题
+              <a href="/2020/05/12/Java%E5%AE%B9%E5%99%A8%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/" rel="next" title="Java容器简单总结">
+                <i class="fa fa-chevron-left"></i> Java容器简单总结
               </a>
             
           </div>
@@ -384,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/17/%E8%AE%B0%E4%B8%80%E4%B8%AAPageHelper%E7%9A%84%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" rel="prev" title="记一个PageHelper的使用问题">
-                记一个PageHelper的使用问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avator.jpg"
@@ -493,6 +499,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-IOC简介"><span class="nav-number">1.</span> <span class="nav-text">Spring IOC简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ApplicationContext"><span class="nav-number">1.1.</span> <span class="nav-text">ApplicationContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanFactory"><span class="nav-number">1.2.</span> <span class="nav-text">BeanFactory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动过程分析"><span class="nav-number">2.</span> <span class="nav-text">启动过程分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Bean容器前的准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">创建Bean容器前的准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Bean容器，加载并注册Bean"><span class="nav-number">2.2.</span> <span class="nav-text">创建Bean容器，加载并注册Bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean容器实例化完成后"><span class="nav-number">2.3.</span> <span class="nav-text">Bean容器实例化完成后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备Bean容器"><span class="nav-number">2.4.</span> <span class="nav-text">准备Bean容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化所有singleton-beans"><span class="nav-number">2.5.</span> <span class="nav-text">初始化所有singleton beans</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
